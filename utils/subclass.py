@@ -11,7 +11,7 @@ from discord.ext import commands
 
 import config
 
-from . import BASE_COLOUR
+from . import BASE_COLOUR, MafuHelpCommand
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
@@ -92,7 +92,7 @@ class Mafuyu(commands.AutoShardedBot):
             intents=intents,
             allowed_mentions=allowed_mentions,
             enable_debug_events=True,
-            help_command=commands.MinimalHelpCommand(),
+            help_command=MafuHelpCommand(),
         )
 
         self.prefixes: dict[int, list[str]] = {}
