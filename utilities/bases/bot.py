@@ -9,6 +9,8 @@ import jishaku
 import mystbin
 from discord.ext import commands
 
+from utilities.help_command import MafuHelpCommand
+
 if TYPE_CHECKING:
     from collections.abc import Iterable
 
@@ -53,7 +55,7 @@ class Mafuyu(commands.AutoShardedBot):
             intents=intents,
             allowed_mentions=allowed_mentions,
             enable_debug_events=True,
-            help_command=commands.MinimalHelpCommand(),
+            help_command=MafuHelpCommand(),
         )
 
         self.prefixes: dict[int, list[str]] = {}
